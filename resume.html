@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,11 +12,13 @@
             padding: 0;
             background-color: #f4f4f4;
         }
+
         .container {
             width: 80%;
             margin: auto;
             overflow: hidden;
         }
+
         header {
             background: #333;
             color: #fff;
@@ -23,25 +26,30 @@
             min-height: 70px;
             border-bottom: #0779e4 3px solid;
         }
+
         header a {
             color: #fff;
             text-decoration: none;
             text-transform: uppercase;
             font-size: 16px;
         }
+
         header ul {
             padding: 0;
             list-style: none;
         }
+
         header li {
             display: inline;
             padding: 0 20px 0 20px;
         }
+
         header #branding {
             float: left;
             display: flex;
             align-items: center;
         }
+
         header #branding img {
             border-radius: 50%;
             width: 50px;
@@ -49,33 +57,41 @@
             margin-right: 15px;
             cursor: pointer;
         }
+
         header #branding h1 {
             margin: 0;
         }
+
         header nav {
             float: right;
             margin-top: 10px;
         }
+
         section {
             padding: 20px;
             margin-bottom: 20px;
             background: #fff;
         }
+
         section h2 {
             margin-top: 0;
         }
+
         .profile {
             text-align: center;
         }
+
         .profile img {
             border-radius: 50%;
             width: 150px;
             height: 150px;
         }
+
         .profile video {
             margin-top: 20px;
             max-width: 100%;
         }
+
         footer {
             background: #333;
             color: #fff;
@@ -83,12 +99,14 @@
             padding: 10px;
             margin-top: 20px;
         }
+
         .contact-info a {
             display: block;
             color: #333;
             text-decoration: none;
             margin: 5px 0;
         }
+
         /* Modal Styles */
         .modal {
             display: none;
@@ -100,15 +118,17 @@
             width: 100%;
             height: 100%;
             overflow: auto;
-            background-color: rgb(0,0,0);
-            background-color: rgba(0,0,0,0.9);
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.9);
         }
+
         .modal-content {
             margin: auto;
             display: block;
             width: 80%;
             max-width: 700px;
         }
+
         .close {
             position: absolute;
             top: 15px;
@@ -118,14 +138,74 @@
             font-weight: bold;
             transition: 0.3s;
         }
+
         .close:hover,
         .close:focus {
             color: #bbb;
             text-decoration: none;
             cursor: pointer;
         }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .bar {
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin: 4px 0;
+            transition: 0.4s;
+        }
+
+        /* The side drawer menu */
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #333;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        .sidenav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #fff;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidenav a:hover {
+            color: #f1f1f1;
+        }
+
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        @media screen and (max-width: 768px) {
+            header nav ul {
+                display: none;
+            }
+            .hamburger {
+                display: flex;
+            }
+        }
     </style>
 </head>
+
 <body>
     <header>
         <div class="container">
@@ -141,15 +221,32 @@
                     <li><a href="#experience">Experience</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <li><a href="#video" id="videoProfileLink">Video Profile</a></li>
                 </ul>
+                <div class="hamburger" onclick="openNav()">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
             </nav>
         </div>
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="#about" onclick="closeNav()">About</a>
+            <a href="#education" onclick="closeNav()">Education</a>
+            <a href="#skills" onclick="closeNav()">Skills</a>
+            <a href="#experience" onclick="closeNav()">Experience</a>
+            <a href="#projects" onclick="closeNav()">Projects</a>
+            <a href="#contact" onclick="closeNav()">Contact</a>
+        </div>
+        
+        
     </header>
 
     <section id="about" class="container">
         <h2>About Me</h2>
-        <p>Skilled React Native Developer with over 2.5 years of experience in developing cross-platform mobile applications. Proficient in JavaScript, and utilizing tools like Android Studio, Xcode, and Firebase. Passionate about creating seamless mobile experiences and optimizing user interfaces.</p>
+        <p>Skilled React Native Developer with over 2.5 years of experience in developing cross-platform mobile
+            applications. Proficient in JavaScript, and utilizing tools like Android Studio, Xcode, and Firebase.
+            Passionate about creating seamless mobile experiences and optimizing user interfaces.</p>
     </section>
 
     <section id="education" class="container">
@@ -189,22 +286,28 @@
         <h2>Projects</h2>
         <h3>ChargeUp Partner App</h3>
         <p>March 2022 – September 2022, Delhi, Delhi</p>
-        <p>Streamlined partner billing support, simplifying payment collection, battery delivery, and inventory management using React Native.</p>
+        <p>Streamlined partner billing support, simplifying payment collection, battery delivery, and inventory
+            management using React Native.</p>
         <h3>ChargeUp Driver App</h3>
         <p>October 2022 – February 2023, Delhi, Delhi</p>
-        <p>Facilitated quick battery swaps for drivers, enabling them to locate nearby battery swapping stations for a seamless experience.</p>
+        <p>Facilitated quick battery swaps for drivers, enabling them to locate nearby battery swapping stations for a
+            seamless experience.</p>
         <h3>ClickNumero</h3>
         <p>March 2023 – August 2023, Delhi, Delhi</p>
-        <p>Combined spirituality with technology by developing an app to understand numerology and shop for related items using React Native.</p>
+        <p>Combined spirituality with technology by developing an app to understand numerology and shop for related
+            items using React Native.</p>
         <h3>KTC</h3>
         <p>September 2023 – December 2023, Delhi, Delhi</p>
-        <p>Developed a cab booking app with real-time location tracking, secure payments, and a user-friendly interface using React Native.</p>
+        <p>Developed a cab booking app with real-time location tracking, secure payments, and a user-friendly interface
+            using React Native.</p>
         <h3>Lyfeboat</h3>
         <p>January 2024 – Present, Delhi, Delhi</p>
-        <p>Optimized user experience for a global medical tourism platform, connecting patients with healthcare providers using React Native.</p>
+        <p>Optimized user experience for a global medical tourism platform, connecting patients with healthcare
+            providers using React Native.</p>
         <h3>Everest Fleet</h3>
         <p>January 2024 – Present, Delhi, Delhi</p>
-        <p>Collaborated with Everest Fleet to create an app for drivers to rent cars, streamline document submission, and facilitate secure payments using React Native.</p>
+        <p>Collaborated with Everest Fleet to create an app for drivers to rent cars, streamline document submission,
+            and facilitate secure payments using React Native.</p>
     </section>
 
     <section id="contact" class="container">
@@ -221,13 +324,11 @@
         <p>© 2024 Ajay Pal. All rights reserved.</p>
     </footer>
 
-    <!-- The Modal for Profile Image -->
     <div id="myModal" class="modal">
         <span class="close">&times;</span>
         <img class="modal-content" id="img01">
     </div>
 
-    <!-- The Modal for Video Profile -->
     <div id="videoModal" class="modal">
         <span class="close">&times;</span>
         <video controls class="modal-content" id="video01">
@@ -237,38 +338,157 @@
     </div>
 
     <script>
-        // Get the modal
+        // Modal related code
         var modal = document.getElementById('myModal');
         var videoModal = document.getElementById('videoModal');
 
-        // Get the image and insert it inside the modal - use its "alt" text as a caption
         var img = document.getElementById('profileImg');
         var modalImg = document.getElementById("img01");
 
-        img.onclick = function(){
+        img.onclick = function () {
             modal.style.display = "block";
             modalImg.src = this.src;
         }
 
-        // Get the video profile link
-        var videoProfileLink = document.getElementById('videoProfileLink');
-        var modalVideo = document.getElementById("video01");
-
-        videoProfileLink.onclick = function(){
-            videoModal.style.display = "block";
-            modalVideo.src = "introduction.mp4";
-        }
-
-        // Get the <span> element that closes the modal
         var span = document.getElementsByClassName("close");
 
-        // When the user clicks on <span> (x), close the modal
-        span[0].onclick = function() { 
+        span[0].onclick = function () {
             modal.style.display = "none";
         }
-        span[1].onclick = function() { 
+        span[1].onclick = function () {
             videoModal.style.display = "none";
+        }
+
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+
+        // Close the side drawer if the user clicks outside of it
+        window.onclick = function (event) {
+            var sidenav = document.getElementById("mySidenav");
+            if (event.target != sidenav && !sidenav.contains(event.target) && sidenav.style.width === "250px") {
+                closeNav();
+            }
+        }
+
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamburger Menu Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .bar {
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin: 4px 0;
+            transition: 0.4s;
+        }
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #333;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+        .sidenav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #fff;
+            display: block;
+            transition: 0.3s;
+        }
+        .sidenav a:hover {
+            color: #f1f1f1;
+        }
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+        @media screen and (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>Logo</div>
+        <div class="hamburger" onclick="openNav()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </header>
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#clients">Clients</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
         }
     </script>
 </body>
-</html>
+</html> -->
